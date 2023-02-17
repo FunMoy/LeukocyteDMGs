@@ -12,7 +12,7 @@ The simulated data was used to evaluate the performance of LeukocyteDMGs. The pr
 library(LeukocyteDMGs)
 data(mye_and_lym_methy_450k)
 data(mye_and_lym_methy_850k)
-##Normal and disease blood methylation profiles were simulated, with the proportion of myeloid and lymphocyte in disease blood being 0.6 and 0.4. 
+###Normal and disease blood methylation profiles were simulated, with the proportion of myeloid and lymphocyte in disease blood being 0.6 and 0.4.
 simu <- simudata(data = control,refergene = refergene)
 ```
 
