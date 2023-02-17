@@ -6,6 +6,20 @@ To install the LeukocyteDMGs, install from github using devtools:
 library(devtools)
 install_github("FunMoy/LeukocyteDMGs")
 ```
+# How to generate simulated data
+The simulated data was used to evaluate the performance of LeukocyteDMGs. The program of **simudata** was used to generate simulated data, and the detailed description was shown in the manual page of **simudata**. We used an example to explain the simulation experiment:
+```
+library(LeukocyteDMGs)
+data(mye_and_lym_methy_450k)
+data(mye_and_lym_methy_850k)
+##Normal and disease blood methylation profiles were simulated, with the proportion of myeloid and lymphocyte in disease blood being 0.6 and 0.4. 
+simu <- simudata(data = control,refergene = refergene)
+```
+
+
+# Identify individualized and population-level DMGs
+The program of **LeukocyteDMGs** was the main program in our algorithm. **LeukocyteDMGs** could identify individualized DMGs of disease samples. After identifying individualized DMGs in disease samples, **LeukocyteDMGs** can infer population-level DMGs, using binomial test. This may meet the different analysis needs of users.
+
 # Usage
 LeukocyteDMGs(platform,disease,normal,degene,freq,single_fdr,DMGs_fdr)
 Arguments|Description
@@ -17,8 +31,6 @@ degene|The differential methylation genes of normal and disease was identified u
 frep|The criteria for identifying stable gene pairs. The default setting of freq is 0.95.
 single_fdr|The threshold of FDR for identifying individual-level differentially methylation genes.
 DMGs_fdr|The threshold of FDR for identifying leukocyte differential methylation genes.}
-
-
 
 # Example
 ```
